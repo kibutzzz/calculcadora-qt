@@ -16,19 +16,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnAdicao_clicked();
 
-    void on_btnSubtracao_clicked();
-
-    void on_btnDivisao_clicked();
-
-    void on_btnMultiplicacao_clicked();
 
 private:
     Ui::MainWindow *ui;
-    float getOperando1();
-    float getOperando2();
-    void setResult(float result);
-    void setResult(std::string result);
+
 };
 #endif // MAINWINDOW_H
