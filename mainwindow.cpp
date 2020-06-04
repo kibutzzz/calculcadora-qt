@@ -1,6 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "calculadora.h"
+
+//variaveis globais
+Calculadora calc;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -67,4 +72,21 @@ void MainWindow::on_btnZero_clicked()
 void MainWindow::on_btnLimpar_clicked()
 {
     ui->inputNumeros->clear();
+}
+
+void MainWindow::on_btnEnter_clicked()
+{
+    int num = ui->inputNumeros->text().toInt(NULL);
+    calc.adicionarNumero(num);
+    ui->outputDados->insertPlainText(QString("%1\n").arg(num));
+    ui->inputNumeros->clear();
+}
+
+void MainWindow::on_btnDivisao_clicked()
+{
+    calc.dividir();
+    for (int i = 0; i < calc.size(); i++)
+    {
+        ui->outputDados->insertPlainText(QString("%1\n").arg(calc.));
+    }
 }

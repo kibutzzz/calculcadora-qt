@@ -40,6 +40,10 @@ private slots:
 
     void on_btnLimpar_clicked();
 
+    void on_btnEnter_clicked();
+
+    void on_btnDivisao_clicked();
+
 private:
     Ui::MainWindow *ui;
 
