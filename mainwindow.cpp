@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "calcexception.h"
 #include <qstack.h>
 
 #include "calculadora.h"
@@ -24,6 +25,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::atualizarVisor()
 {
+    ui->labelErro->clear();
     ui->outputDados->clear();
     for (int numero : *calc.getCopiaPilha())
     {
@@ -89,40 +91,64 @@ void MainWindow::on_btnLimpar_clicked()
 // --------- OPERAÇÕES --------
 void MainWindow::on_btnDivisao_clicked()
 {
-    calc.dividir();
-    this->atualizarVisor();
+    try {
+        calc.dividir();
+        this->atualizarVisor();
+    } catch (CalcException *exception) {
+        this->ui->labelErro->setText(exception->what());
+    }
 }
 
 void MainWindow::on_btnMultiplicacao_clicked()
 {
-    calc.multiplicar();
-    this->atualizarVisor();
+    try {
+        calc.multiplicar();
+        this->atualizarVisor();
+    } catch (CalcException *exception) {
+        this->ui->labelErro->setText(exception->what());
+    }
 }
 
 void MainWindow::on_btnSubtracao_clicked()
 {
-    calc.subtrair();
-    this->atualizarVisor();
+    try{
+        calc.subtrair();
+        this->atualizarVisor();
+    } catch (CalcException *exception) {
+        this->ui->labelErro->setText(exception->what());
+    }
 }
 
 void MainWindow::on_btnAdicao_clicked()
 {
-    calc.somar();
-    this->atualizarVisor();
+    try{
+        calc.somar();
+        this->atualizarVisor();
+    } catch (CalcException *exception) {
+        this->ui->labelErro->setText(exception->what());
+    }
 }
 
 
 // --------- INVERTER, DELETAR, ACRESCENTAR --------
 void MainWindow::on_btnInverte_clicked()
 {
-    calc.inverterUltimos();
-    this->atualizarVisor();
+    try{
+        calc.inverterUltimos();
+        this->atualizarVisor();
+    } catch (CalcException *exception) {
+        this->ui->labelErro->setText(exception->what());
+    }
 }
 
 void MainWindow::on_btnDelete_clicked()
 {
-    calc.deletarUltimo();
-    this->atualizarVisor();
+    try{
+        calc.deletarUltimo();
+        this->atualizarVisor();
+    } catch (CalcException *exception) {
+        this->ui->labelErro->setText(exception->what());
+    }
 }
 
 void MainWindow::on_btnEnter_clicked()

@@ -1,4 +1,6 @@
+#include "calcexception.h"
 #include "calculadora.h"
+
 
 bool Calculadora::possuiDoisNumeros()
 {
@@ -27,7 +29,7 @@ int Calculadora::getUltimoNumero()
 void Calculadora::inverterUltimos()
 {
     if(!possuiDoisNumeros()){
-        return;
+        throw  new CalcException("Dois numeros são necessários para inverter");
     }
 
     int ultimo = this->pop();
@@ -57,7 +59,7 @@ void Calculadora::deletarUltimo()
 
 void Calculadora::somar() {
     if(!possuiDoisNumeros()){
-        return;
+        throw  new CalcException("Dois numeros são necessários para efetuar a soma");
     }
 
     int n2 = this->pop();
@@ -69,10 +71,17 @@ void Calculadora::somar() {
 
 void Calculadora::dividir(){
     if(!possuiDoisNumeros()){
-        return;
+        throw  new CalcException("Dois numeros são necessários para efetuar a divisão");
+    }
+    int n2 = this->pop();
+
+    if(n2 == 0) {
+
+        this->push(n2);
+
+        throw new CalcException("Não é possivel dividir por 0");
     }
 
-    int n2 = this->pop();
     int n1 = this->pop();
 
     this->push(n1/n2);
@@ -80,7 +89,7 @@ void Calculadora::dividir(){
 
 void Calculadora::subtrair() {
     if(!possuiDoisNumeros()){
-        return;
+        throw  new CalcException("Dois numeros são necessários para efetuar a subtração");
     }
 
     int n2 = this->pop();
@@ -91,7 +100,7 @@ void Calculadora::subtrair() {
 
 void Calculadora::multiplicar(){
     if(!possuiDoisNumeros()){
-        return;
+        throw  new CalcException("Dois numeros são necessários para efetuar a multiplicação");
     }
 
     int n2 = this->pop();
