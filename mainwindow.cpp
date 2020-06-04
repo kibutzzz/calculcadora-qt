@@ -155,3 +155,13 @@ void MainWindow::on_btnEnter_clicked()
     ui->inputNumeros->clear();
 }
 
+
+void MainWindow::on_btnAnterior_clicked()
+{
+    ui->outputDados->moveCursor(QTextCursor::Up, QTextCursor::MoveMode::KeepAnchor);
+}
+
+void MainWindow::on_btnProximo_clicked()
+{
+    ui->outputDados->moveCursor(QTextCursor::Down, QTextCursor::MoveMode::KeepAnchor);
+}

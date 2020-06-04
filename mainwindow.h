@@ -54,6 +54,10 @@ private slots:
 
     void on_btnDelete_clicked();
 
+    void on_btnAnterior_clicked();
+
+    void on_btnProximo_clicked();
+
 private:
     Ui::MainWindow *ui;
 
