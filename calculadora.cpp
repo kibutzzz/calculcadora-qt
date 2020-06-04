@@ -24,6 +24,26 @@ int Calculadora::getUltimoNumero()
     return n;
 }
 
+void Calculadora::inverterUltimos()
+{
+    if(!possuiDoisNumeros()){
+        return;
+    }
+
+    int ultimo = this->pop();
+    int penultimo = this->pop();
+
+    this->push(ultimo);
+    this->push(penultimo);
+}
+
+void Calculadora::deletarUltimo()
+{
+    if(!this->isEmpty()) {
+        this->pop();
+    }
+}
+
 void Calculadora::somar() {
     if(!possuiDoisNumeros()){
         return;
