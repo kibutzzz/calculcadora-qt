@@ -23,6 +23,10 @@ public:
 
     void dividir();
 
+    void deletarUltimo();
+
+    void inverterUltimos();
+
 };
 
 #endif // CALCULADORA_H
