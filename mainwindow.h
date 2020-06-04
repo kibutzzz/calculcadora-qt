@@ -18,6 +18,28 @@ public:
 private slots:
 
 
+    void on_btnUm_clicked();
+
+    void on_btnDois_clicked();
+
+    void on_btnTres_clicked();
+
+    void on_btnQuatro_clicked();
+
+    void on_btnCinco_clicked();
+
+    void on_btnSeis_clicked();
+
+    void on_btnSete_clicked();
+
+    void on_btnOito_clicked();
+
+    void on_btnNove_clicked();
+
+    void on_btnZero_clicked();
+
+    void on_btnLimpar_clicked();
+
 private:
     Ui::MainWindow *ui;
 
