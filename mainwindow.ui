@@ -284,6 +284,9 @@
     </property>
    </widget>
    <widget class="QTextEdit" name="outputDados">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -291,6 +294,9 @@
       <width>301</width>
       <height>91</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit {color: black}</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnLimpar">
