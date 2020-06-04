@@ -27,6 +27,8 @@ public:
 
     void inverterUltimos();
 
+    QStack<int>* getCopiaPilha();
+
 };
 
 #endif // CALCULADORA_H

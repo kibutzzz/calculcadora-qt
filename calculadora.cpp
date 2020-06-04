@@ -37,6 +37,17 @@ void Calculadora::inverterUltimos()
     this->push(penultimo);
 }
 
+QStack<int> *Calculadora::getCopiaPilha()
+{
+    QStack* copia = new QStack();
+
+    for(int numero : *this) {
+        copia->push(numero);
+    }
+
+    return copia;
+}
+
 void Calculadora::deletarUltimo()
 {
     if(!this->isEmpty()) {
