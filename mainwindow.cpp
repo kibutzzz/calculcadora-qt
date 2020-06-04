@@ -79,8 +79,12 @@ void MainWindow::on_btnLimpar_clicked()
 void MainWindow::on_btnDivisao_clicked()
 {
     calc.dividir();
+
     ui->outputDados->clear();
-    //implementar recarga dos valores no visor
+    for (int numero : *calc.getCopiaPilha())
+    {
+        ui->outputDados->insertPlainText(QString("%1\n").arg(numero));
+    }
 }
 
 void MainWindow::on_btnMultiplicacao_clicked()
@@ -127,3 +131,4 @@ void MainWindow::on_btnEnter_clicked()
     ui->outputDados->insertPlainText(QString("%1\n").arg(num));
     ui->inputNumeros->clear();
 }
+
