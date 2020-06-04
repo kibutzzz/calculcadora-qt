@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <qstack.h>
 
 #include "calculadora.h"
 
@@ -74,19 +75,55 @@ void MainWindow::on_btnLimpar_clicked()
     ui->inputNumeros->clear();
 }
 
+// --------- OPERAÇÕES --------
+void MainWindow::on_btnDivisao_clicked()
+{
+    calc.dividir();
+    ui->outputDados->clear();
+    //implementar recarga dos valores no visor
+}
+
+void MainWindow::on_btnMultiplicacao_clicked()
+{
+    calc.multiplicar();
+    ui->outputDados->clear();
+    //implementar recarga dos valores no visor
+}
+
+void MainWindow::on_btnSubtracao_clicked()
+{
+    calc.subtrair();
+    ui->outputDados->clear();
+    //implementar recarga dos valores no visor
+}
+
+void MainWindow::on_btnAdicao_clicked()
+{
+    calc.somar();
+    ui->outputDados->clear();
+    //implementar recarga dos valores no visor
+}
+
+
+// --------- INVERTER, DELETAR, ACRESCENTAR --------
+void MainWindow::on_btnInverte_clicked()
+{
+    calc.inverterUltimos();
+    ui->outputDados->clear();
+    //implementar recarga dos valores no visor
+}
+
+void MainWindow::on_btnDelete_clicked()
+{
+    calc.deletarUltimo();
+    ui->outputDados->clear();
+    //implementar recarga dos valores no visor
+}
+
 void MainWindow::on_btnEnter_clicked()
 {
     int num = ui->inputNumeros->text().toInt(NULL);
     calc.adicionarNumero(num);
     ui->outputDados->insertPlainText(QString("%1\n").arg(num));
     ui->inputNumeros->clear();
-}
-
-void MainWindow::on_btnDivisao_clicked()
-{
-    calc.dividir();
-    for (int i = 0; i < calc.size(); i++)
-    {
-        ui->outputDados->insertPlainText(QString("%1\n").arg(calc.));
-    }
 }

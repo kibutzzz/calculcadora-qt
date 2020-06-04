@@ -44,6 +44,16 @@ private slots:
 
     void on_btnDivisao_clicked();
 
+    void on_btnMultiplicacao_clicked();
+
+    void on_btnSubtracao_clicked();
+
+    void on_btnAdicao_clicked();
+
+    void on_btnInverte_clicked();
+
+    void on_btnDelete_clicked();
+
 private:
     Ui::MainWindow *ui;
 
